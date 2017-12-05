@@ -1,0 +1,51 @@
+{
+  "name": "s3-plus-1",
+  "version": "0.0.1",
+  "description": "S3 served json data with an extra S... Socket.IO for updates",
+  "main": "app.js",
+  "scripts": {
+    "start": "export PORT=\"8888\" && node app.js",
+    "build:client": "webpack --progress --colors --config webpack.config.js",
+    "build:server": "webpack --progress --colors --config webpack.config.server.js",
+    "dist:clean": "rimraf ./dist/*",
+    "test": "eslint *.js src/**/*.js",
+    "build": "npm run dist:clean && npm run build:client && npm run build:server",
+    "develop": "export DEV_MODE=\"ssr\" && export PORT=\"8888\" && node ./app.js"
+  },
+  "keywords": [
+    "S3",
+    "Socket.IO",
+    "AWS",
+    "Lamdba"
+],
+  "author": "Charles Rawls",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "1.7.1",
+    "express": "4.16.2",
+    "socket.io": "2.0.4"
+  },
+  "devDependencies": {
+    "assets-webpack-plugin": "3.5.1",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.1",
+    "babel-loader": "7.1.2",
+    "babel-plugin-async-to-promises": "1.0.5",
+    "babel-plugin-syntax-dynamic-import": "6.18.0",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-react": "6.24.1",
+    "eslint": "4.7.2",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-import": "2.7.0",
+    "extract-text-webpack-plugin": "3.0.0",
+    "nodemon": "1.12.1",
+    "rimraf": "2.6.1",
+    "uglifyjs-webpack-plugin": "1.0.1",
+    "webpack": "3.10.0",
+    "webpack-dev-middleware": "1.12.0",
+    "webpack-hot-middleware": "2.20.0",
+    "webpack-node-externals": "1.6.0"    
+  }
+}
